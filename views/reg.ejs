@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime | REGISTRATION</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+      <!-- Registration Form -->
+      <div class="container auth">
+          <div class="row ">
+              <div class="col-md-1"></div>
+              <div class="col-md-5 shadow">
+                <div class="img-show ">
+                    <h1 class="mb-3 crimemate"><b><a href="/">CrimeKatanka</a> Security System</b></h1>
+                    <ul class="list">
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Attend To Your Complains</li>
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Protect You</li>
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Protect Your Property</li>
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Safeguard</li>
+                        <li class="list-item"></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col-md-5 shadow">
+                <div class="authen">
+                    <div class="auth-header text-danger">
+                        <h1>Register</h1>
+                        <%- include("./partials/messages.ejs") %>                  
+                    </div>
+                    <blockquote class="blockquote mt-2">
+                        <p class="mb-0"></p>
+                        <footer class="blockquote-footer"> <cite title="Source Title">Input correct details for registration  /  </cite> <a href="/user/login">Login</a></footer>
+                    </blockquote>
+                    <form action="/user/register" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Firstname" name='Firstname' value="<% typeof Firstname != 'undefined'? Firstname: ''; %>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Lastname" name='Lastname' value="<% typeof Lastname != 'undefined'? Lastname: ''; %>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username" name='username' value="<% typeof username != 'undefined'? username: ''; %>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email e.g: xyz@gmail.com" name='email' value="<% typeof email != 'undefined'? email: ''; %>" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password e.g: WzytUU@48" name='password' required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password" name='password1' required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Phone Number e.g: +2349074563847" name='phone' required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <a href="" class="list-link"><i><b>Forgot Password</b></i></a>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <button type="submit" class="btn btn-danger submit">Submit</button>
+                            </div><br>
+                            
+                        </div>
+                    </form>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+          </div>
+      </div>
+    
+
+    <script src="/js/Jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

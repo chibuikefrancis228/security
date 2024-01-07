@@ -1,0 +1,323 @@
+<%- include('../partials/admin_partial/header.ejs') %>
+
+<section class="container convict">
+    <h3>Ex-Convict Database</h3><br>
+    
+    <div class="clearfix">
+        <button type="button" class="btn btn-md btn-info float-left" data-toggle="modal" data-target="#modelCreate">
+            Add Ex-Convict
+        </button>
+
+        <form action=""  class="float-right">
+            <input type="text" id="myInput" class="form-control" placeholder="Search Ex-convict">
+        </form>
+    </div><br>
+
+    <%- include('../partials/messages.ejs') %> 
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>State of Origin</th>
+                    <th>Crime</th>
+                    <th>Lives Lost</th>
+                    <th>Sentence</th>
+                    <th>Profile Pix</th>
+                    <th>View</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <% if(convicts.length > 0){ %>
+                    <% convicts.forEach(convict =>{ %> 
+                        <tr>
+                            <td><%=convict.firstname%> <%=convict.lastname%></td>
+                            <td><%= convict.dob %> </td>
+                            <td><%= convict.soo %> </td>
+                            <td><%= convict.crime %> </td>
+                            <td><%= convict.lives %> </td>
+/                            <td>
+                                <% if(convict.sentence == 1){ %>
+                                    <%= convict.sentence %> yr
+                                <% }else{ %> 
+                                    <%= convict.sentence %> yrs
+                                <% } %> 
+                            </td>
+                            <td><img src="/uploads/<%= convict.profile_pix %>" style="border-radius: 40px;" width="30px" height="30px" alt="" class="img-fluid"></td>
+                            <td>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#model<%= convict._id %>view">
+                                  view
+                                </button>                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="model<%= convict._id %>view" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                                <div class="modal-header">
+                                                        <h5 class="modal-title"><%= convict.firstname %> Details </h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                    </div>
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+                                                    <div class="text-center">
+                                                        <img src="/uploads/<%= convict.profile_pix %>" style="border-radius: 45px; border: 3px solid black;" width="20%" height="20%" alt="" class="img-fluid">
+                                                    </div><br>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>Firstname</small></p>
+                                                                    <b><%= convict.firstname %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>Lastname</small></p>
+                                                                    <b><%= convict.lastname %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>DOB</small></p>
+                                                                    <b><%= convict.dob %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>State Of Origin</small></p>
+                                                                    <b><%= convict.soo %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-7">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>Address</small></p>
+                                                                    <small><b><%= convict.address %> </b></small>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>Contact</small></p>
+                                                                    <b><%= convict.contact %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>Crime Type</small></p>
+                                                                    <b><%= convict.crime %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>Lives Lost</small></p>
+                                                                    <b><%= convict.lives %> </b>
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p><small>No of Sentence</small></p>
+                                                                    <% if(convict.sentence == 1){ %>
+                                                                        <b><%= convict.sentence %> </b> yr
+                                                                    <% }else{ %> 
+                                                                        <b><%= convict.sentence %> </b> yrs
+                                                                    <% } %>                                                                     
+                                                                </div>
+                                                            </div><br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <script>
+                                    $('#exampleModal').on('show.bs.modal', event => {
+                                        var button = $(event.relatedTarget);
+                                        var modal = $(this);
+                                        // Use above variables to manipulate the DOM
+                                        
+                                    });
+                                </script>
+                            </td>
+                            <td>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#model<%= convict._id %> ">
+                                ✐
+                                </button>                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="model<%= convict._id %>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header text-white bg-info">
+                                                <h5 class="modal-title">Edit Ex-Convict Details</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/admin/editConvict/<%= convict._id %>" method="POST" enctype="multipart/form-data">
+                                                    <div class="form-group">
+                                                        <label for="firstname">Firstname</label>
+                                                        <input type="text" class="form-control" required name="firstname" value="<%= convict.firstname %>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lastname">Lastname</label>
+                                                        <input type="text" class="form-control" required name="lastname" value="<%= convict.lastname %>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="dob">DOB</label>
+                                                        <input type="date" class="form-control" required name="dob" value="<%= convict.dob %>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="soo">State of Origin</label>
+                                                        <input type="text" class="form-control" required name="soo" value="<%= convict.soo %>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="address">Address</label>
+                                                        <input type="text" class="form-control" required name="address" value="<%= convict.address %>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="contact">Contact</label>
+                                                        <input type="tel" class="form-control" required name="contact" value="<%= convict.contact %>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="crime">Crime</label>
+                                                        <select name="crime" id="" class="form-control" required>
+                                                            <option value="" selected>Select Crime</option>
+                                                            <option value="Homicide">Homicide</option>
+                                                            <option value="Theft">Theft</option>
+                                                            <option value="Murder">Murder</option>
+                                                            <option value="Human trafficking">Human Trafficking</option>
+                                                        </select>
+                                                        <small><b>Crime &bowtie; </b><%= convict.crime %> </small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="LL">Lost Lives</label>
+                                                        <input type="text" name="lives" id="" value="<%= convict.lives %> " class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sentence">No of Sentence</label>
+                                                        <input type="text" name="lives" id="" value="<%= convict.sentence %> " class="form-control" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Profile Pix">Profile Pix</label>
+                                                        <input type="file" name="image" id="" value="<%= convict.lives %>" class="form-control" required>
+                                                        <img src="/uploads/<%= convict.profile_pix %>" style="border: 40px;" width="15%" height="15%" alt="" class="img-fluid">
+                                                    </div>
+                                                    <button class="btn btn-primary btn-block">Update</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <form action="/admin/deleteConvict/<%= convict._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-sm btn-danger text-white">✖</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %> 
+                <% }else{ %> 
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>No Ex-Convict Records Available</strong>
+                    </div>
+                <% } %> 
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Create ex-Convict -->
+    <!-- Modal -->
+    <div class="modal fade" id="modelCreate" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-white bg-info">
+                    <h5 class="modal-title">Ex-Convict</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/admin/createConvict" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="firstname">Firstame</label>
+                            <input type="text" class="form-control" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">DOB</label>
+                            <input type="date" class="form-control" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="soo">State of Origin</label>
+                            <input type="text" class="form-control" name="soo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact</label>
+                            <input type="tel" class="form-control" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="crime">Crime</label>
+                            <select name="crime" id="" class="form-control" required>
+                                <option value="" label="Select Crime" selected></option>
+                                <option value="Homicide">Homicide</option>
+                                <option value="Theft">Theft</option>
+                                <option value="Murder">Murder</option>
+                                <option value="Rape">Rape</option>
+                                <option value="Human trafficking">Human Trafficking</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="LL">Lost Lives</label>
+                            <input type="number" name="lives" id="" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sentence">No of Sentence</label>
+                            <input type="number" name="sentence" id="" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile">Profile Pix</label>
+                            <input type="file" name="image" id="" class="form-control" required>
+                        </div>
+                        <button class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/admin_partial/footer.ejs') %>

@@ -1,0 +1,36 @@
+<%- include("../partials/Dash_Partials/header.ejs") %> 
+<style>
+    .profile{
+        margin-top: 80px;
+    }
+</style>
+<div class="container profile">
+    <div class="card">
+        <div class="card-header">
+            <h1><%= user %>'s Profile</h1>
+        </div>
+        <div class="card-body">
+            <form action="/report/user/<%= profile.id %>?_method=PUT " method="POST">                
+                <div class="form-group">
+                    <label for="">Firstname</label>
+                    <input type="text" name="firstname" value="<%= profile.Firstname %> " class="form-control" placeholder="Firstname">
+                </div>                
+                <div class="form-group">
+                    <label for="">Lastname</label>
+                    <input type="text" name="lastname" value="<%= profile.Lastname %> " class="form-control" placeholder="Lastname">
+                </div>
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="text" name="username" value="<%= profile.username %> " class="form-control" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" name="phone" value="<%= profile.phone %> " class="form-control" placeholder="Phone">
+                </div>
+                <button class="btn btn-block btn-dark">Update Profile</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/Dash_Partials/footer.ejs") %> 

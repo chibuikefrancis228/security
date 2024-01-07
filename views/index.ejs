@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFCC | Home</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+            <a class="navbar-brand font-weight-bolder" href="/"><img src="../img/0132fea276bac01a7345885e02af7ff5(2).jpg" alt="" class="img-fluid align-content-center mr-2">EFCC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarsExample03">
+              <ul class="navbar-nav mr-auto">
+                
+              </ul>
+              <ul class="form-inline navbar-nav my-2 my-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <% if(user){ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/report/dashboard">User Dashboard</a>
+                  </li>
+                <% }else{%>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>            
+                <% } %>                                
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/login">ADMIN</a>
+                </li>                                  
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="showcase">
+        <div class="container mt-lg-4 bg-dark p-4">
+            <div class="text-center">
+              <h1 class="font-weight-bolder">Hi, We are Glad To Take Your Complain!!</h1>
+              👮👮👮👮👮👮
+              <p class="font-weight-bold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam quo distinctio earum saepe impedit quas. Sit, illum rem recusandae voluptas voluptatem a quasi? Sunt earum atque cum iusto. Autem, omnis?</p>
+              <a href="/user/login" class="btn btn-md btn-outline-danger font-weight-bold">LOGIN</a>
+              <a href="/user/register" class="btn btn-md btn-danger font-weight-bold">REGISTER</a>
+            </div>
+        </div>
+    </section>
+    <article class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h3>Top Security</h3>
+              <img src="\img\icons8_Security_Energy_64.png" alt="" class="img-fluid">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit beatae facilis quas, aut ipsam obcaecati laboriosam quisquam nesciunt magni facere.</p>
+            </div>
+          </div><br>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h3>Top Safety</h3>
+              <img src="\img\icons8_Bypassing_Safety_Control_64.png" alt="" class="img-fluid">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit beatae facilis quas, aut ipsam obcaecati laboriosam quisquam nesciunt magni facere.</p>
+            </div>
+          </div><br>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h3>Top Defense</h3>
+              <img src="\img\icons8_defense_64.png" alt="" class="img-fluid">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit beatae facilis quas, aut ipsam obcaecati laboriosam quisquam nesciunt magni facere.</p>
+            </div>
+          </div><br>
+        </div>
+      </div>
+    </article><br>
+
+    <div class="jumbotron jumbotron-fluid bg-danger text-white">
+      <div class="container">
+        <h2 class="">Economic And Financial Crimes Commission (EFCC)</h2>
+        <p class="lead"></p>
+        <hr class="my-2">
+        <p>Click for More info</p>
+        <p class="lead">
+          <a class="btn btn-dark btn-md" href="Jumbo action link" role="button">More About Us</a>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 contact">
+            <h5><b>CONTACT US</b></h5>
+            <p>Address: Poly-Junction, Umuerim Nekede, Owerri Imo State, Nigeria</p>
+            <p>Support: +234-1-6367000 | +234700-7877678 | support@crimemate.net </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <p>All Right Reserved &copy; 2021</p>
+            <small>Designed & Developed By Ezeigbo Francis Chibuike</small>
+            <ul class="list-unstyled list-inline mt-3 ">
+              <li class="list-inline-item"><img src="/img/icons8_Facebook_32.png" alt="" class="img-fluid"></li>
+              <li class="list-inline-item"><img src="/img/icons8_whatsapp_32.png" alt="" class="img-fluid"></li>
+              <li class="list-inline-item"><img src="/img/icons8_instagram_32.png" alt="" class="img-fluid"></li>
+            </ul>
+          </div>
+          <div class="col-md-4 agency text-center">
+            <img src="/img/NCC.jpg" alt="" class="img-fluid">
+            <img src="/img/CD.png" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+
+    <script src="/js/Jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<%- include("../partials/admin_partial/header.ejs") %> 
+
+    <section class="stat container">
+        <blockquote class="blockquote">
+            <h4 class="mb-0">Welcome, Admin 🙂</h4>
+        </blockquote>
+        <%- include("../partials/messages.ejs") %> 
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1><%= reports.length  %> </h1>
+                        <h3>Reports</h3>
+                    </div>
+                </div><br>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1><%= resolved.length %> </h1>
+                        <h3>Reports Attend To</h3>
+                    </div>
+                </div><br>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1><%= users.length %> </h1>
+                        <h3>Users</h3>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    </section>
+
+   
+
+<%- include("../partials/admin_partial/footer.ejs") %> 

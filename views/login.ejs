@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime | LOGIN</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+      <!-- Registration Form -->
+      <div class="container auth">
+          <div class="row ">
+              <div class="col-md-1"></div>
+              <div class="col-md-5 shadow">
+                <div class="img-show ">
+                    <h1 class="mb-3 crimemate"><b><a href="/">CrimeKatanka</a> Security System</b></h1>
+                    <ul class="list">
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Attend To Your Complains</li>
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Protect You</li>
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Protect Your Property</li>
+                        <li class="list-item"><img src="/img/icons8_ok_16.png" alt="" class="img-fluid mr-2">We Safeguard</li>
+                        <li class="list-item"></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col-md-5 shadow">
+                <div class="authen">
+                    <div class="auth-header text-danger">
+                        <h1>Login</h1>    
+                        <%- include("./partials/messages.ejs") %>                     
+                    </div>
+                    <blockquote class="blockquote mt-2">
+                        <p class="mb-0"></p>
+                        <footer class="blockquote-footer"> <cite title="Source Title">Input Your correct login details   /   </cite> <a href="/user/register">Register</a></footer>
+                    </blockquote>
+                    <form action="/user/login" method="POST">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <button type="submit" class="btn btn-danger submit">Submit</button>
+                            </div><br>
+                            
+                        </div>
+                    </form>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+          </div>
+      </div>
+    
+
+    <script src="/js/Jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<%- include("../partials/Dash_Partials/header.ejs") %> 
+
+<!-- Lay Complains Form -->
+<section class="container report">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <div class="card-title">Hi, Please Lay Your complains Here!!!</div>
+        </div>
+        <div class="card-body">
+        <%- include("../partials/messages.ejs") %> 
+        <form action="/report/" method="POST">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="">Location</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="location" placeholder="Location">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="">Crime Description</label>
+                    <div class="form-group">
+                        <textarea id="" cols="30" rows="5" class="form-control" name="description" placeholder="Crime Description"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="">Crime Condition</label>
+                    <div class="form-group">
+                        <select name="crime_condition" id="" class="form-control">
+                            <option value="">Select Option</option>
+                            <option value="Critical">Critical</option>
+                            <option value="Non-critical">Non-critical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="">Crime Type</label>
+                    <div class="form-group">
+                        <select name="crime_type" id="" class="form-control">
+                            <option value="">Select Option</option>
+                            <option value="Theft">Theft</option>
+                            <option value="Rape">Rape</option>
+                            <option value="Fight">Fight</option>
+                            <option value="Fraud">Fraud</option>
+                            <option value="Money Laundry">Money Laundry</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-outline-dark">Report</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="card-footer bg-dark">
+            
+        </div>
+    </div>
+</section>
+      
+<%- include("../partials/Dash_Partials/footer.ejs") %> 

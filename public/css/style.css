@@ -1,0 +1,123 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+}
+
+.navbar-brand img{
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.showcase{
+    background: url("../img/markus-winkler-cS2eQHB7wE4-unsplash.jpg");
+    background-size: cover;
+    padding: 40px;    
+    line-height: 3rem;
+    color: whitesmoke;
+    height: 35rem;
+}
+.showcase .bg-dark{
+    opacity: 0.9;
+}
+
+.showcase{
+    border-bottom: 5px solid #DC3545;
+    margin-bottom: 50px;
+}
+
+
+/* Authentication Styles */
+.auth{
+    margin-top: 100px;
+    line-height: 12px;
+    
+}
+.auth .img-show{
+    background: url("../img/neonbrand-mgYAR7BzBk4-unsplash.jpg") no-repeat 0;
+    background-size: cover;
+    background-color: #35424a;
+    padding: 80px;
+    margin-left: -15px;
+    color: whitesmoke;
+}
+.auth .img-show h1{
+    border-bottom: 5px solid rgb(241, 55, 55);
+    padding-bottom: 10px;
+}
+.auth .crimemate a{
+    text-decoration: none;
+    color: rgb(241, 55, 55);
+}
+.auth .crimemate a:hover{
+    color: whitesmoke;
+}
+.auth .list{
+    list-style: none;
+    font-weight: bolder;
+    font-size: 14pt;
+    font-family: sans-serif;
+}
+.auth .list li{
+    line-height: 39px;
+}
+
+.auth .auth-header{
+    padding: 10px;
+    color: rgb(241, 55, 55);
+    border-bottom: 3px solid rgb(241, 55, 55);
+    color: whitesmoke;
+    font-weight: bolder;
+}
+.auth a{
+    text-decoration: none;
+    color: black;
+}
+.auth a:hover{
+    color: rgb(92, 53, 53);
+}
+.auth .submit{
+    width: 100%;
+}
+
+footer .contact{
+    font-size: 10pt;
+}
+footer .agency{
+    display: flex;
+}
+footer .agency img{
+    width: 40%;
+    height: 80%;
+}
+footer .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dash-header nav{
+    border-radius: 8px;
+}
+.stat{
+    margin-top: 80px;
+}
+.stat .card{
+    border-bottom: 5px solid rgb(52,58,64);
+    text-align: center;
+}
+.report{
+    margin-top: 80px;
+}
+.report button{
+    width: 100%;
+}
+.records{
+    margin-top: 80px;
+}
+.convict{
+    margin-top: 80px;
+}
